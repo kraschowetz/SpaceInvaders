@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-Player::Player(InputHandler* in){
+Player::Player(InputHandler* in, SDL_Renderer *r){
     /*
         PLAYER():
 
@@ -17,8 +17,14 @@ Player::Player(InputHandler* in){
         this
     );
     addChild(col);
-    position = Vector2(0.f, 416.f);
 
+    this->spr = new Sprite();
+    spr->load("res/player.png", r);
+    spr->setSize(Vector2(32.f, 32.f));
+    addChild(spr);
+
+    position = Vector2(0.f, 416.f);
+    
     this->input = in;
 }
 

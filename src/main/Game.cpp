@@ -181,6 +181,6 @@ void Game::initGame(){
 
         -add player as a child to scene root
     */
-    Player *p = new Player(&this->input);
+    Player *p = new Player(&this->input, this->renderer);
     root.addChild(p);
 }

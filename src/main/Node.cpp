@@ -13,7 +13,7 @@ void Node::translate(Vector2 to){
     }
 }
 
-void Node::setOffest(Vector2 of){
+void Node::setOffset(Vector2 of){
     /*
         VOID SET OFFSET:
 
@@ -22,6 +22,14 @@ void Node::setOffest(Vector2 of){
     */
     this->offset = of;
     this->translate(this->position);
+}
+
+void Node::setSize(Vector2 s){
+    this->size = s;
+}
+
+void Node::setScale(Vector2 s){
+    this->scale = s;
 }
 
 void Node::update(float delta){
