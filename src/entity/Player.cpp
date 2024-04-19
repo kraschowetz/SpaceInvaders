@@ -11,16 +11,18 @@ Player::Player(InputHandler* in, SDL_Renderer *r){
 
         -add inputhandler pointer
     */
+    this->size = Vector2(32.f, 32.f);
+
     this->col = new Collider(
         this->position,
-        Vector2(32.f, 32.f),
+        this->size,
         this
     );
     addChild(col);
 
     this->spr = new Sprite();
     spr->load("res/player.png", r);
-    spr->setSize(Vector2(32.f, 32.f));
+    spr->setSize(this->size);
     addChild(spr);
 
     position = Vector2(0.f, 416.f);
@@ -65,7 +67,14 @@ void Player::update(float delta){
 }
 
 void Player::shoot(){
-    std::cout << "pew\n";
+    Bullet *b = new Bullet();
+    b->translate(
+        Vector2(
+            this->position.x + this->size.x / 2 - 2,
+            this->position.y + this->size.y / 2
+        )
+    );
+    getParent()->addChild(b);
 }
 
 void Player::render(SDL_Renderer *r){

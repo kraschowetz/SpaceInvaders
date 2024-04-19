@@ -26,6 +26,7 @@ class Node{
         virtual void updateChildren(float delta);
         virtual void render(SDL_Renderer *r);
         virtual void renderChildren(SDL_Renderer *r);
+        void deleteNode();
         Node *getParent();
         std::vector<Node*> getChildren();
 };

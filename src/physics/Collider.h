@@ -12,11 +12,12 @@ class Collider : public Node{
         bool isStatic;
         bool isTrigger = false;
         bool isActive = true;
+        bool debug = true;
         Vector2 centerPosition;
         Vector2 size;
         std::string data;
         Entity *entity;
-    //getters
+    //getters & setters
     public:
         SDL_Rect* getShape();
         Vector2 getCenter();

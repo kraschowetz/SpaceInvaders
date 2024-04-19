@@ -125,6 +125,10 @@ void Collider::render(SDL_Renderer* r){
 
         -draws collider shape, bounds and center point
     */
+    if(!debug){
+        return;
+    }
+
     SDL_Rect renderShape {
         shape.x + (int)offset.x,
         shape.y + (int)offset.y,

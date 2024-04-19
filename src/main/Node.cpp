@@ -52,6 +52,19 @@ void Node::renderChildren(SDL_Renderer *r){
     }
 }
 
+void Node::deleteNode(){
+    Node *parent = getParent();
+    for (int i = 0; i < parent->getChildren().size(); i++){
+        if(parent->getChildren().at(i) == this){
+            for(Node *n : children){
+                n->deleteNode();
+            }
+            parent->children.erase(parent->children.begin() + i);
+            delete this;
+        }
+    }
+}
+
 void Node::setParent(Node *p){
     this->parent = p;
 }

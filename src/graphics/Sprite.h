@@ -1,10 +1,9 @@
 #pragma once
 
-#include <SDL.h>
+#include "../main/Node.h"
+
 #include <SDL_image.h>
 #include <string>
-
-#include "../main/Node.h"
 
 class Sprite : public Node{
     //members

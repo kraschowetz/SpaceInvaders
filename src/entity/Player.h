@@ -4,6 +4,7 @@
 #include "../physics/Collider.h"
 #include "../main/InputHandler.h"
 #include "../graphics/Sprite.h"
+#include "../entity/Bullet.h"
 
 class Player : public Entity{
     //members
